@@ -1,0 +1,51 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- <div class="contanier">
+    <div class="row">
+        <div class="col-md-4 " style="margin-left: 30%;">
+          
+        </div>
+      </div> -->
+  <!-- <div class="row">
+    <div class="col-md-4 " style="margin-left: 30%;">
+      <form >
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" [(ngModel)]="userData.email" name="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="file">Upload File:</label>
+          <input type="file" class="form-control" name="productImage" [(ngModel)]="userData.productImage" (change)="fileUpload($event)" id="file">
+        </div>
+        
+        <button type="submit" class="btn btn-default" (click)="createLocation()">Submit</button>
+      </form>
+    </div>
+  </div> -->
+
+   <div class="row">
+    <div class="col-md-8 " style="margin-left: 10%;">
+      <h3><h3>Q.{{qindex+1}}</h3>{{question.question}}</h3><br>
+             <input (click)="selectOption(question.Option1)" type="radio"  name="{{qindex}}" >&nbsp;{{question.Option1}}<br><br>
+               <input (click)="selectOption(question.Option2)" type="radio" name="{{qindex}}">&nbsp;{{question.Option2}}<br><br>
+               <input (click)="selectOption(question.Option3)" type="radio" name="{{qindex}}">&nbsp;{{question.Option3}}<br><br>
+               <input (click)="selectOption(question.Option4)" type="radio" name="{{qindex}}">&nbsp;{{question.Option4}}<br><br><br>
+     
+      <button (click)="back()" type="button" style="margin-left:35%;" class="btn btn-primary">Preview</button>
+      <button *ngIf="qindex+1!=paper.length" (click)="next()" type="button" style="margin-left: 20%" class="btn btn-success">Next</button>
+      <button *ngIf="qindex+1==paper.length" (click)="calculateResult()" type="button" style="margin-left: 20%" class="btn btn-success">Submit</button>
+    </div>
+     
+</div>
+
+<!-- <div class="contanier"> -->
+
+<router-outlet></router-outlet>
+<!-- </div> -->
